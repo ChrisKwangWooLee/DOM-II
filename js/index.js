@@ -1,17 +1,5 @@
 // Your code goes here
 
-// * [v] `mouseover`
-// * [ ] `keydown`
-// * [v] `wheel`
-// * [v] `drag / drop`
-// * [v] `load`
-// * [ ] `focus`
-// * [v] `resize`
-// * [v] `scroll`
-// * [ ] `select`
-// * [ ] `dblclick`
-
-
 // 1. mouseover
 let logoHeading = document.querySelector('.container .logo-heading');
 logoHeading.addEventListener('mouseover', function(event) {
@@ -37,7 +25,6 @@ welcome.addEventListener('wheel', function(event) {
     event.target.style.transform = 'scale(1.3)';
     event.target.style.transition = 'transform 1s';
 })
-
 
 // 5. load
 window.addEventListener('load', event => {
@@ -196,7 +183,10 @@ parent.addEventListener('click', event => {
 let navItems = document.querySelectorAll('.nav .nav-link');
 navItems.forEach(el => {
     el.addEventListener('click', event => {
-        event.preventDefault();
-        console.log('prevent default activated')
+        if (el.className !== 'animation') {
+            event.preventDefault();
+            console.log('prevent default activated')
+        }
     })
 });
+
